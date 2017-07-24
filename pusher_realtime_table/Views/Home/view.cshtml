@@ -1,0 +1,87 @@
+﻿
+
+@{
+    ViewBag.Title = "view";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
+<script src="//js.pusher.com/4.0/pusher.min.js"></script>
+
+
+<h2>Real-Time Table</h2>
+
+
+<table class="table" id="app">
+    <tr>
+        <th>
+            Sn
+        </th>
+        <th>
+           Title
+        </th>
+        <th>
+            Year
+        </th>
+        
+    </tr>
+
+
+    <tr v-for="(mov, index) in sorted_movies">
+        <td>
+        {{index+1}}
+        </td>
+        <td>
+         {{mov.title}}
+        </td>
+        <td>
+        {{mov.year}}
+        </td>
+    </tr>
+
+
+</table>
+<script>
+    var pusher = new Pusher('XXX_APP_KEY', {
+        cluster: 'XXX_APP_CLUSTER'
+    });
+    var my_channel = pusher.subscribe('asp_channel');
+    var app = new Vue({
+        el: '#app',
+        data: {
+            movies: []
+        },
+        created: function () {
+            this.get_movies();
+            this.listen();
+        },
+        methods: {
+            get_movies: function () {
+                axios.get('@Url.Action("seen", "Home")')
+                  .then((response)=> {
+
+                      this.movies = response.data;
+                      
+                  });
+
+            },
+            listen: function () {
+                my_channel.bind("asp_event", (data) => {
+                    this.movies.push(data);
+                })
+            }
+        },
+        computed: {
+            sorted_movies: function () {
+                var movies = this.movies;
+              
+                movies =  movies.sort(function (a, b) {
+                    return parseInt(a.year) - parseInt(b.year);
+                });
+                
+                return movies;
+            }
+        }
+    });
+</script>
