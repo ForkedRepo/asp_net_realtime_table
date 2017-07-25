@@ -15,7 +15,7 @@ If you use https, use this instead
 git clone https://github.com/samuelayo/asp_net_realtime_table.git
 ```
 
-After cloning, open the `pusherasp.sln` file in visual studio.
+After cloning, open the `pusher_realtime_table.sln` file in visual studio.
 
 ### Setup Pusher
 
