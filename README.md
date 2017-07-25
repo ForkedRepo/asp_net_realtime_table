@@ -6,13 +6,13 @@ Build a REaltime table with .NET and Pusher
 Clone the project repository by running the command below if you use SSH
 
 ```
-git clone git@github.com:ammezie/asp-anonymous-chat.git
+git clone git@github.com:samuelayo/asp_net_realtime_table.git
 ```
 
 If you use https, use this instead
 
 ```
-git clone https://github.com/ammezie/asp-anonymous-chat.git
+git clone https://github.com/samuelayo/asp_net_realtime_table.git
 ```
 
 After cloning, open the `pusherasp.sln` file in visual studio.
