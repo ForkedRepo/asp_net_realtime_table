@@ -1,5 +1,5 @@
 # ASP.NET Real Time Table
-Build a REaltime table with .NET and Pusher
+Build a Realtime table with .NET and Pusher
 
 ### Getting Started
 
