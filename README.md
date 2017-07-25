@@ -22,13 +22,13 @@ After cloning, open the `pusherasp.sln` file in visual studio.
 If you don't have one already, create a free Pusher account at https://pusher.com/signup then login to your dashboard and create an app. 
 
 
-Then fill in your Pusher app credentials in your `pusherasp\Controllers\HomeController` file by replacing this line with your appid, appkey and app secret respectively:
+Then fill in your Pusher app credentials in your `Controllers\HomeController` file by replacing this line with your appid, appkey and app secret respectively:
 
 ```
 var pusher = new Pusher("PUSHER_APP_ID", "PUSHER_APP_KEY", "PUSHER_APP_SECRET", options);
 ```
 
-Also, remember to fill in the your secret key and app cluster in your `pusherasp\Views\Home\view.cshtml` file by updating this line:
+Also, remember to fill in the your secret key and app cluster in your `Views\Home\view.cshtml` file by updating this line:
 
 ```
 var pusher = new Pusher('PUSHER_APP_KEY', {cluster: 'XXX_CLUSTER'});
