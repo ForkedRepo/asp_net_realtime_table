@@ -16,9 +16,9 @@ namespace pusher_realtime_table.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Index(realtimetable data)
+        public async Task<ActionResult> Index(RealtimeTable data)
         {
-            realtimetable setdata = new realtimetable();
+            realtimetable setdata = new RealtimeTable();
             setdata.title = data.title;
             setdata.year = data.year;
             db.realtime.Add(setdata);
