@@ -29,7 +29,7 @@ namespace pusher_realtime_table.Models
         {
             return new ApplicationDbContext();
         }
-        public DbSet<realtimetable> realtime { get; set; }
+        public DbSet<RealtimeTable> realtime { get; set; }
    
     }
 }
