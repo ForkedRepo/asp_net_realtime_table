@@ -6,7 +6,7 @@ using System.Web;
 
 namespace pusher_realtime_table.Models
 {
-    public class realtimetable
+    public class RealtimeTable
     {
         [Key]
         public int id { get; set; }
