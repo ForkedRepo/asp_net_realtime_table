@@ -1,4 +1,4 @@
-# BUILD REALTIME COMMENTS USING ASP.NET
+# BUILD REALTIME TABLE USING ASP.NET
 
 We often need to display data in a table. However, unless it’s a realtime table, we need to reload to view new data each time that it’s added. For example, take a table of movies arranged by the year they were released. Each time a movie is added, we would not know of the changes until we reload our page - which is not the best experience for a user.
 
